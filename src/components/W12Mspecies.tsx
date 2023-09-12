@@ -3,7 +3,7 @@ interface SpeciesNameProps {
   onChangeSpecies: (value: string) => void;
 }
 
-const W12Mspecies: React.FC<SpeciesNameProps> = ({
+const W12MSpecies: React.FC<SpeciesNameProps> = ({
   species,
   onChangeSpecies,
 }) => (
@@ -18,4 +18,4 @@ const W12Mspecies: React.FC<SpeciesNameProps> = ({
   </>
 );
 
-export default W12Mspecies;
+export default W12MSpecies;
