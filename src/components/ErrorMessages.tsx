@@ -4,7 +4,7 @@ interface errorMessageProps {
 export const ErrorMessages: React.FC<errorMessageProps> = ({ messages }) => (
   <>
     {messages.forEach((entry) => {
-      <h1>entry</h1>;
+      <h4 style={{ color: "red" }}>{entry}</h4>;
     })}
   </>
 );
