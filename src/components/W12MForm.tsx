@@ -5,6 +5,10 @@ import W12MPlanet from "./W12MPlanet";
 import W12MPopulation from "./W12MPopulation";
 import W12MMaths from "./W12MMaths";
 import W12MSJustification from "./W12MJustification";
+import { validateJustification } from "./validations/ValidateJustification";
+import { validateMaths } from "./validations/ValidateMaths";
+import { validatePlanetName } from "./validations/ValidatePlanet";
+import { validatePopulation } from "./validations/ValidatePopulation";
 import { validateSpeciesName } from "./validations/validateSpeciesName";
 
 const W12MForm = () => {
@@ -31,18 +35,22 @@ const W12MForm = () => {
       <W12MPlanet
         planet={planetName}
         onChangePlanet={(value) => setPlanetName(value)}
+        validate={validatePlanetName}
       />
       <W12MPopulation
         population={planetPop}
         onChangePop={(value) => setPlanetPop(value)}
+        validate={validatePopulation}
       />
       <W12MMaths
         answer={mathAnswer}
         onChangeCalc={(value) => setMathAnswer(value)}
+        validate={validateMaths}
       />
       <W12MSJustification
         reason={reasonToSave}
         onChangeReason={(value) => setReasonToSave(value)}
+        validate={validateJustification}
       />
       <input type="submit" value="submit"></input>
     </form>

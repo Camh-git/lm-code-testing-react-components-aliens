@@ -10,6 +10,7 @@ describe("Test the component", () => {
       <W12MPopulation
         population={planetPop}
         onChangePop={(value) => setPlanetPop(value)}
+        validate={(value: Number) => ["1000000"]}
       />
     );
     const elementText = screen.getByText("Number of beings: ");
@@ -20,6 +21,7 @@ describe("Test the component", () => {
       <W12MPopulation
         population={planetPop}
         onChangePop={(value) => setPlanetPop(value)}
+        validate={(value: Number) => ["1000000"]}
       />
     );
     let target = screen.getByLabelText("Number of beings: ");

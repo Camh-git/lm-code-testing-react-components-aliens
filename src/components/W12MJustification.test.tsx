@@ -10,6 +10,7 @@ describe("Test the component", () => {
       <W12MSJustification
         reason={reasonToSave}
         onChangeReason={(value) => setReasonToSave(value)}
+        validate={(value: string) => ["Because we are nice people"]}
       />
     );
     const elementText = screen.getByText("Reason for sparing:");
@@ -20,6 +21,7 @@ describe("Test the component", () => {
       <W12MSJustification
         reason={reasonToSave}
         onChangeReason={(value) => setReasonToSave(value)}
+        validate={(value: string) => ["Because we are nice people"]}
       />
     );
     let target = screen.getByLabelText("Reason for sparing: ");

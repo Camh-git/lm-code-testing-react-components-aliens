@@ -10,6 +10,7 @@ describe("Test the component", () => {
       <W12MPlanet
         planet={planetName}
         onChangePlanet={(value) => setPlanetName(value)}
+        validate={(value: string) => ["Earth"]}
       />
     );
     const elementText = screen.getByText("Planet Name:");
@@ -20,6 +21,7 @@ describe("Test the component", () => {
       <W12MPlanet
         planet={planetName}
         onChangePlanet={(value) => setPlanetName(value)}
+        validate={(value: string) => ["Earth"]}
       />
     );
     let target = screen.getByLabelText("Planet Name:");

@@ -10,6 +10,7 @@ describe("Test the component", () => {
       <W12MMaths
         answer={mathAnswer}
         onChangeCalc={(value) => setMathAnswer(value)}
+        validate={(value: string) => ["4"]}
       />
     );
     const elementText = screen.getByText("What is 2+2?");
@@ -20,6 +21,7 @@ describe("Test the component", () => {
       <W12MMaths
         answer={mathAnswer}
         onChangeCalc={(value) => setMathAnswer(value)}
+        validate={(value: string) => ["4"]}
       />
     );
     let target = screen.getByLabelText("What is 2+2?");
