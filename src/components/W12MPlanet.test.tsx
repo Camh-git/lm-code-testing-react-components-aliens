@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { useState } from "react";
 import W12MPlanet from "./W12MPlanet";
+import { typeIntoElement } from "./typeIntoElement";
 
 describe("Test the component", () => {
   const [planetName, setPlanetName] = useState("Earth");
@@ -21,5 +22,10 @@ describe("Test the component", () => {
         onChangePlanet={(value) => setPlanetName(value)}
       />
     );
+    let target = screen.getByLabelText("Planet Name:");
+    typeIntoElement(target, "Mars");
+    expect(planetName).toBe("Mars");
+    typeIntoElement(target, "Yavin");
+    expect(planetName).toBe("Yavin");
   });
 });

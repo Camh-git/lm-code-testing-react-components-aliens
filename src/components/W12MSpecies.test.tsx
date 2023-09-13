@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { useState } from "react";
 import W12MSpecies from "./W12MSpecies";
+import { typeIntoElement } from "./typeIntoElement";
 
 describe("Test the component", () => {
   const [speciesName, setSpeciesName] = useState("Humans");
@@ -21,5 +22,10 @@ describe("Test the component", () => {
         onChangeSpecies={(value) => setSpeciesName(value)}
       />
     );
+    let target = screen.getByLabelText("Species Name:");
+    typeIntoElement(target, "Dalek");
+    expect(speciesName).toBe("Dalek");
+    typeIntoElement(target, "Cat");
+    expect(speciesName).toBe("Cat");
   });
 });

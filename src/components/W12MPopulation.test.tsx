@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { useState } from "react";
 import W12MPopulation from "./W12MPopulation";
+import { typeIntoElement } from "./typeIntoElement";
 
 describe("Test the component", () => {
   const [planetPop, setPlanetPop] = useState(0);
@@ -21,5 +22,8 @@ describe("Test the component", () => {
         onChangePop={(value) => setPlanetPop(value)}
       />
     );
+    let target = screen.getByLabelText("Number of beings: ");
+    typeIntoElement(target, "42000000000");
+    expect(planetPop).toBe(42000000000);
   });
 });

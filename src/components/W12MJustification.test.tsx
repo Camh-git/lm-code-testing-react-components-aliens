@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { useState } from "react";
 import W12MSJustification from "./W12MJustification";
+import { typeIntoElement } from "./typeIntoElement";
 
 describe("Test the component", () => {
   const [reasonToSave, setReasonToSave] = useState("Placeholder");
@@ -21,5 +22,8 @@ describe("Test the component", () => {
         onChangeReason={(value) => setReasonToSave(value)}
       />
     );
+    let target = screen.getByLabelText("Reason for sparing: ");
+    typeIntoElement(target, "Because we are nice people");
+    expect(reasonToSave).toBe("Because we are nice people");
   });
 });
