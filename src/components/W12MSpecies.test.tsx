@@ -10,6 +10,7 @@ describe("Test the component", () => {
       <W12MSpecies
         species={speciesName}
         onChangeSpecies={(value) => setSpeciesName(value)}
+        validate={(value: string) => ["Human"]}
       />
     );
     const elementText = screen.getByText("Species Name:");
@@ -20,6 +21,7 @@ describe("Test the component", () => {
       <W12MSpecies
         species={speciesName}
         onChangeSpecies={(value) => setSpeciesName(value)}
+        validate={(value: string) => ["Human"]}
       />
     );
     let target = screen.getByLabelText("Species Name:");

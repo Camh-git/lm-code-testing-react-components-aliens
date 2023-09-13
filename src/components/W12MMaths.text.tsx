@@ -25,6 +25,8 @@ describe("Test the component", () => {
     let target = screen.getByLabelText("What is 2+2?");
     selectValue(target, "4");
     expect(mathAnswer).toBe("4");
+    selectValue(target, "Not 4");
+    expect(mathAnswer).toBe("Not 4");
   });
 });
 

@@ -5,6 +5,7 @@ import W12MPlanet from "./W12MPlanet";
 import W12MPopulation from "./W12MPopulation";
 import W12MMaths from "./W12MMaths";
 import W12MSJustification from "./W12MJustification";
+import { validateSpeciesName } from "./validations/validateSpeciesName";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("Humans");
@@ -25,6 +26,7 @@ const W12MForm = () => {
       <W12MSpecies
         species={speciesName}
         onChangeSpecies={(value) => setSpeciesName(value)}
+        validate={validateSpeciesName}
       />
       <W12MPlanet
         planet={planetName}
